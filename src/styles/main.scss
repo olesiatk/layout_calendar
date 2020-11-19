@@ -35,7 +35,7 @@ body {
     bottom: 20px;
   }
 
-  @for $i from 1 through 30 {
+  @for $i from 1 through $amount {
     .calendar-#{$amount} :nth-child(#{$i})::before {
       content: ""+$i;
     }
