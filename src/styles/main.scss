@@ -1,3 +1,49 @@
+@import "_var";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 707px;
+}
+
+@each $amount in $dayAmount {
+  .calendar-#{$amount} :nth-child(-n+#{$amount}) {
+    width: $blockWidth;
+    height: $blockHeight;
+    background-color: #eee;
+    border: 1px solid black;
+    margin: 0 $blockMarginRight 1px 0;
+    text-align: center;
+    line-height: $blockHeight;
+    cursor: pointer;
+  }
+
+  .calendar-#{$amount} :nth-child(-n+#{$amount}):hover {
+    background-color: pink;
+    position: relative;
+    bottom: 20px;
+  }
+
+  @for $i from 1 through 30 {
+    .calendar-#{$amount} :nth-child(#{$i})::before {
+      content: ""+$i;
+    }
+  }
+
+  @each $day, $n in $dayFirst {
+    .calendar-#{$day} :first-child {
+      margin-left: $blockDistanse*$n;
+    }
+  }
 }

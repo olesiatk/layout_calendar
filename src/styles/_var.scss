@@ -1,0 +1,9 @@
+$blockHeight: 100px;
+$blockWidth: 100px;
+$blockMarginRight: 1px;
+
+$blockDistanse: $blockWidth + $blockMarginRight;
+
+$dayAmount: 30, 31;
+
+$dayFirst: (mon : 0, tue : 1, wed : 2, thu : 3, fri : 4, sat : 5, sun : 6);
